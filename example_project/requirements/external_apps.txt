@@ -5,3 +5,4 @@
 # get python libs
 -r libs.txt
 django==1.5.1
+south==0.8.4
