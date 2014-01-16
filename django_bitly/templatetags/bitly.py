@@ -9,14 +9,14 @@ register = Library()
 
 
 @register.filter
-def bitlify(value):
+def bitlify(value, scheme='http'):
     """
     Gets or create a Bittle object for the passed object. If unable to get
     Bittle and/or create bit.ly, will just return the get_absolute_url value.
     """
 
     try:
-        bittle = Bittle.objects.bitlify(value)
+        bittle = Bittle.objects.bitlify(value, scheme=scheme)
         if bittle:
             url = bittle.shortUrl
         else:
